@@ -8,7 +8,7 @@ from flask import Flask, request, render_template, jsonify
 from fuzzy import fetch_movie_from_tmdb  # Ensure this module exists and is correct
 
 # Initialize Flask app
-app = Flask(__name__, static_folder="C:/Users/misho/Downloads/1/movie-recommender-app/build", static_url_path='/')
+app = Flask(__name__, static_folder="filepath of the bulid folder", static_url_path='/')
     
 CORS(app)
 
