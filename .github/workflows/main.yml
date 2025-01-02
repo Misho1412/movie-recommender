@@ -28,7 +28,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run backend tests
-        run: pytest backend.py
+        run: pytest backendtest.py
 
   test-frontend:
     name: Frontend Tests
