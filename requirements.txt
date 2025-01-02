@@ -5,4 +5,4 @@ scikit-learn==1.2.0
 numpy==1.23.5
 gunicorn==20.1.0  # For deployment (e.g., Heroku)
 requests==2.28.2  # For external API calls
-pytest
+pytest==7.4.0
