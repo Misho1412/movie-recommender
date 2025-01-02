@@ -5,25 +5,22 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask, request, render_template, jsonify
 
-from fuzzy import fetch_movie_from_tmdb  # Ensure this module exists and is correct
-
-# Initialize Flask app
-app = Flask(__name__, static_folder="filepath of the bulid folder", static_url_path='/')
+app = Flask(__name__, static_folder="C:/Users/misho/Downloads/project final/movie-recommender-website/build", static_url_path='/')
     
 CORS(app)
 
 def createSimilarity():
-    data = pd.read_csv('main_data.csv')  # Reading the dataset
+    data = pd.read_csv("C:/Users/misho/Downloads/project final/movie-recommender-website/main_data.csv")  # Reading the dataset
     cv = CountVectorizer()
     countMatrix = cv.fit_transform(data['comb'])
     similarity = cosine_similarity(countMatrix)  # Creating the similarity matrix
     return (data, similarity)
 
 def getAllMovies():
-    data = pd.read_csv('main_data.csv')
+    data = pd.read_csv("C:/Users/misho/Downloads/project final/movie-recommender-website/main_data.csv")
     return list(data['movie_title'].str.capitalize())
 
-def Recommend(movie):
+def  Recommend(movie):
     """
     Recommend movies based on similarity and fallback to TMDB API for missing movies.
     """
