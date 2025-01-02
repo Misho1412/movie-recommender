@@ -4,6 +4,8 @@ from flask_cors import CORS, cross_origin
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask, request, render_template, jsonify
+from urllib.parse import quote as url_quote
+
 
 app = Flask(__name__, static_folder="C:/Users/misho/Downloads/project final/movie-recommender-website/build", static_url_path='/')
     
